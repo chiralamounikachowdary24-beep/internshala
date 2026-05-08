@@ -1,0 +1,16 @@
+
+> internarea@0.1.0 dev
+> next dev
+
+▲ Next.js 16.1.1 (Turbopack)
+- Local:         http://localhost:3000
+- Network:       http://192.168.192.1:3000
+
+✓ Starting...
+Creating turbopack project { dir: 'C:\\internshala\\internarea', testMode: true }
+✓ Ready in 1851ms
+ GET / 200 in 2.1s (compile: 1844ms, render: 260ms)
+ GET / 200 in 189ms (compile: 28ms, render: 161ms)
+✓ Compiled in 791ms
+✓ Compiled in 125ms
+✓ Compiled in 101ms

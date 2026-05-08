@@ -1,0 +1,12 @@
+
+> backend@1.0.0 start
+> node index.js
+
+◇ injected env (3) from .env // tip: ⌘ custom filepath { path: '/custom/path/.env' }
+◇ injected env (0) from .env // tip: ◈ encrypted .env [www.dotenvx.com]
+Server is running on the port 5000
+Database is connected
+Chrome login OTP email failed: Connection timeout
+Chrome login OTP email failed: Connection timeout
+Chrome login OTP email failed: Connection timeout
+Chrome login OTP email failed: Connection timeout
