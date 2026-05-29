@@ -31,9 +31,11 @@ app.use((req,res,next)=>{
 })
 
 const startServer = () => {
-  app.listen(port,()=>{
-    console.log(`Server is running on the port ${port}`)
-  })
+  if (process.env.NODE_ENV !== 'production') {
+    app.listen(port,()=>{
+      console.log(`Server is running on the port ${port}`)
+    })
+  }
 
   connect().catch((error) => {
     console.error("Database connection failed:", error.message)
@@ -41,3 +43,5 @@ const startServer = () => {
 }
 
 startServer();
+
+module.exports = app;
