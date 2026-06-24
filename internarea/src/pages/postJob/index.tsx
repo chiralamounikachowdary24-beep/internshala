@@ -50,7 +50,8 @@ const PostJobPage = () => {
     }
     try {
       setisloading(true);
-      await axios.post("http://localhost:5000/api/job", formData);
+      const API_BASE = process.env.NEXT_PUBLIC_API_URL || "https://backend-fawn-xi-33.vercel.app";
+      await axios.post(`${API_BASE}/api/job`, formData);
       toast.success("job posted successfuly");
       router.push("/adminpanel");
     } catch (error) {

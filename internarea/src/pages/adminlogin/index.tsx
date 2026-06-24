@@ -27,8 +27,9 @@ const AdminLoginPage = () => {
     }
     try {
       setisloading(true);
+      const API_BASE = process.env.NEXT_PUBLIC_API_URL || "https://backend-fawn-xi-33.vercel.app";
       await axios.post(
-        "http://localhost:5000/api/admin/adminlogin",
+        `${API_BASE}/api/admin/adminlogin`,
         formadata
       );
       setAdminAuthenticated();

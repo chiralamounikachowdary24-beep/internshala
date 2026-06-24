@@ -52,7 +52,8 @@ const PostInternshipPage = () => {
     }
     try {
       setisloading(true);
-      await axios.post("http://localhost:5000/api/internship", formData);
+      const API_BASE = process.env.NEXT_PUBLIC_API_URL || "https://backend-fawn-xi-33.vercel.app";
+      await axios.post(`${API_BASE}/api/internship`, formData);
       toast.success("internship posted successfuly");
       router.push("/adminpanel");
     } catch (error) {

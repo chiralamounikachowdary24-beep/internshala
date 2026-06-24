@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 import { selectuser } from "@/Feature/Userslice";
 import { Heart, Image as ImageIcon, MessageCircle, Send, Share2, Video, X, Trash2 } from "lucide-react";
 
-const API = "http://localhost:5000";
+const API = process.env.NEXT_PUBLIC_API_URL || "https://backend-fawn-xi-33.vercel.app";
 
 type Comment = {
   userEmail: string;

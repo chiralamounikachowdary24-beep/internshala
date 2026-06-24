@@ -59,7 +59,9 @@ const Navbar = () => {
         errorCode === "auth/popup-closed-by-user";
 
       if (!wasCancelled) {
-        toast.error(getLoginErrorMessage(error, t("login_failed")));
+        const fallbackMsg = error instanceof Error ? error.message : t("login_failed");
+        toast.error(getLoginErrorMessage(error, fallbackMsg));
+        console.error("Login failed:", error);
         await signOut(auth).catch(() => undefined);
       }
     } finally {

@@ -120,9 +120,10 @@ const [jobs, setjob] = useState <any>([]);
 useEffect(() => {
   const fetchdata = async () => {
     try {
+      const API_BASE = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000";
       const [internshipres, jobres] = await Promise.all([
-        axios.get("http://localhost:5000/api/internship"),
-        axios.get("http://localhost:5000/api/job")
+        axios.get(`${API_BASE}/api/internship`),
+        axios.get(`${API_BASE}/api/job`)
       ]);
 
       setinternship(internshipres.data);
