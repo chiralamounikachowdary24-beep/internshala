@@ -11,6 +11,17 @@ app.use(bodyparser.json({limit:"50mb"}))
 app.use(bodyparser.urlencoded({extended:true,limit:"50mb"}))
 app.use(express.json())
 
+// Ensure database connection is established before serving requests (crucial for Serverless)
+app.use(async (req, res, next) => {
+  try {
+    await connect();
+    next();
+  } catch (error) {
+    console.error("Database connection middleware failed:", error.message);
+    res.status(500).json({ error: "Database connection failed" });
+  }
+});
+
 app.get('/',(req,res)=>{
   res.send("hello this is internshala backend")
 })

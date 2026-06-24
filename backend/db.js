@@ -5,6 +5,11 @@ const url = process.env.DATABASE_URL;
 let isConnected = false;
 
 module.exports.connect = async () => {
+  if (isConnected || mongoose.connection.readyState === 1) {
+    isConnected = true;
+    return;
+  }
+
   if (!url) {
     throw new Error("DATABASE_URL is missing in .env");
   }
